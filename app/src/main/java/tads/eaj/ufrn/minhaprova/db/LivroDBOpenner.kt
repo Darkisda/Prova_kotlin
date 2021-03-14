@@ -65,7 +65,7 @@ null, LivroContrato.DATABASE_VERSION) {
             livro.nome = cursor.getString(cursor.getColumnIndex(LivroContrato.LivroEntry.NOME))
             livro.ano = cursor.getInt(cursor.getColumnIndex(LivroContrato.LivroEntry.ANO))
             livro.autor = cursor.getString(cursor.getColumnIndex(LivroContrato.LivroEntry.AUTOR))
-            livro.nota = cursor.getDouble(cursor.getColumnIndex(LivroContrato.LivroEntry.NOTA))
+            livro.nota = cursor.getFloat(cursor.getColumnIndex(LivroContrato.LivroEntry.NOTA))
 
             return livro
 
@@ -89,7 +89,7 @@ null, LivroContrato.DATABASE_VERSION) {
                 livro.nome = cursor.getString(cursor.getColumnIndex(LivroContrato.LivroEntry.NOME))
                 livro.autor = cursor.getString(cursor.getColumnIndex(LivroContrato.LivroEntry.AUTOR))
                 livro.ano = cursor.getInt(cursor.getColumnIndex(LivroContrato.LivroEntry.ANO))
-                livro.nota = cursor.getDouble(cursor.getColumnIndex(LivroContrato.LivroEntry.NOTA))
+                livro.nota = cursor.getFloat(cursor.getColumnIndex(LivroContrato.LivroEntry.NOTA))
 
                 listaLivros.add(livro)
             }

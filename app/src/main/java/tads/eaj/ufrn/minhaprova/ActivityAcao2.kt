@@ -44,9 +44,7 @@ class ActivityAcao2 : AppCompatActivity() {
                     Toast.makeText(this@ActivityAcao2, "Por favor preencha com um ano", Toast.LENGTH_SHORT).show()
                 }
 
-                notaInput.setOnRatingBarChangeListener { ratingBar, fl, b ->
-                    livro.nota = fl.toDouble()
-                }
+                livro.nota = notaInput.rating
 
                 db.create(livro)
 

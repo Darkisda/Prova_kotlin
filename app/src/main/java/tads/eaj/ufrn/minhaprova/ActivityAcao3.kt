@@ -21,8 +21,17 @@ class ActivityAcao3 : AppCompatActivity() {
         var id = 1
 
         binding.apply {
+            var l = bd.read(id)
+
+            titulo.text = l.nome
+            autor.text = l.autor
+            ano.text = l.ano.toString()
+            nota.text = l.nota.toString()
+
             buttonProximo.setOnClickListener {
-                if (id < livros.size +1) {
+                if (id == livros.size) {
+                    buttonProximo.isEnabled = false
+                }else{
                     id ++
 
                     var l = bd.read(id)
@@ -32,12 +41,14 @@ class ActivityAcao3 : AppCompatActivity() {
                     ano.text = l.ano.toString()
                     nota.text = l.nota.toString()
 
-                }else{
-                    setVisible(false)
+                    buttonProximo.isEnabled = true
+                    buttonAnterior.isEnabled = true
                 }
             }
             buttonAnterior.setOnClickListener {
-                if (id > 0) {
+                if (id == 1) {
+                    buttonAnterior.isEnabled = false
+                } else {
                     id --
 
                     var l = bd.read(id)
@@ -46,8 +57,9 @@ class ActivityAcao3 : AppCompatActivity() {
                     autor.text = l.autor
                     ano.text = l.ano.toString()
                     nota.text = l.nota.toString()
-                } else {
-                    setVisible(false)
+
+                    buttonAnterior.isEnabled = true
+                    buttonProximo.isEnabled = true
                 }
             }
         }
